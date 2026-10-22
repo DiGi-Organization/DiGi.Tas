@@ -75,11 +75,14 @@ namespace DiGi.Tas.TIC
             global::TIC.InternalConditionFolder internalConditionFolder_Child = internalConditionFolder.childFolders(i);
             while (internalConditionFolder_Child != null)
             {
-                List<Analytical.Building.Classes.InternalCondition>? internalConditions = internalConditionFolder.InternalConditions(includeNested, folderPath_Temp);
+                List<Analytical.Building.Classes.InternalCondition>? internalConditions = internalConditionFolder_Child.InternalConditions(includeNested, folderPath_Temp);
                 if (internalConditions != null)
                 {
                     result.AddRange(internalConditions);
                 }
+
+                i++;
+                internalConditionFolder_Child = internalConditionFolder.childFolders(i);
             }
 
             return result;
