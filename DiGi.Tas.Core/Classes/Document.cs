@@ -9,9 +9,9 @@ namespace DiGi.Tas.Core.Classes
     /// <typeparam name="T">The type of the value contained within the document.</typeparam>
     public abstract class Document<T> : IDocument, IDisposable
     {
-        protected bool readOnly = false;
+        protected bool readOnly;
         protected T? value;
-        private bool disposed = false;
+        private bool disposed;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Document{T}"/> class with default settings.
